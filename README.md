@@ -6,23 +6,25 @@
 Преобразование сырых CSV-данных резюме в числовые массивы `.npy`, готовые для машинного обучения.
 
 ## Структура проекта
-hh-preprocessing/
-├── app.py              # Точка входа
-├── pipeline.py         # Сборка цепочки обработчиков
-├── requirements.txt    # Зависимости
-├── README.md           # Документация
-├── .gitignore          # Исключения для Git
-└── handlers/           # Обработчики данных
-    ├── __init__.py
-    ├── base_handler.py # Абстрактный базовый класс
-    ├── salary_handler.py   # Парсинг зарплаты
-    ├── age_handler.py      # Извлечение возраста
-    ├── experience_handler.py  # Парсинг опыта работы
-    ├── city_handler.py     # Обработка города (one-hot)
-    └── final_handler.py    # Формирование финальных массивов
+hh-preprocessing/\
+├── app.py&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;# Точка входа приложения\
+├── pipeline.py&emsp;&emsp;&emsp;&ensp;# Сборка цепочки обработчиков\
+├── requirements.txt&emsp;# Зависимости проекта\
+├── README.md&emsp;&emsp;&ensp;# Документация\
+├── .gitignore&emsp;&emsp;&emsp;&ensp;# Исключения для системы контроля версий\
+└── handlers/&emsp;&emsp;&emsp;&ensp;# Модуль обработчиков данных\
+    ├── __init__.py\
+    ├── base_handler.py&emsp;&emsp;&emsp;&ensp;# Абстрактный базовый класс\
+    ├── salary_handler.py&emsp;&emsp;&emsp;# Парсинг зарплаты\
+    ├── age_handler.py&emsp;&emsp;&emsp;&emsp;# Извлечение возраста\
+    ├── experience_handler.py&emsp;# Парсинг опыта работы\
+    ├── city_handler.py&emsp;&emsp;&emsp;&emsp;# Обработка города (one-hot кодирование)\
+    └── final_handler.py&emsp;&emsp;&emsp;&ensp;# Формирование финальных массивов
 
 ## Установка
+```bash
 pip install -r requirements.txt
+```
 
 ## Использование
 python app.py path/to/hh.csv
