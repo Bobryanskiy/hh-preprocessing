@@ -7,22 +7,19 @@
 
 ## Структура проекта
 hh-preprocessing/
-├── app.py              # Точка входа
-├── pipeline.py         # Сборка цепочки обработчиков
-├── requirements.txt    # Зависимости
-├── README.md           # Документация
-├── .gitignore          # Исключения для Git
-└── handlers/           # Обработчики данных
-    ├── __init__.py
-    ├── base_handler.py # Абстрактный базовый класс
-    ├── salary_handler.py   # Парсинг зарплаты
-    ├── age_handler.py      # Извлечение возраста
-    ├── experience_handler.py  # Парсинг опыта работы
-    ├── city_handler.py     # Обработка города (one-hot)
-    └── final_handler.py    # Формирование финальных массивов
-
-## Установка
-pip install -r requirements.txt
+  app.py
+  pipeline.py
+  requirements.txt
+  README.md
+  .gitignore
+  handlers/
+    __init__.py
+    base_handler.py
+    salary_handler.py
+    age_handler.py
+    experience_handler.py
+    city_handler.py
+    final_handler.py
 
 ## Использование
 python app.py path/to/hh.csv
