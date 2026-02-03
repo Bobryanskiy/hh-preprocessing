@@ -13,13 +13,13 @@ hh-preprocessing/\
 ├── README.md&emsp;&emsp;&ensp;# Документация\
 ├── .gitignore&emsp;&emsp;&emsp;&ensp;# Исключения для системы контроля версий\
 └── handlers/&emsp;&emsp;&emsp;&ensp;# Модуль обработчиков данных\
-    ├── __init__.py\
-    ├── base_handler.py&emsp;&emsp;&emsp;&ensp;# Абстрактный базовый класс\
-    ├── salary_handler.py&emsp;&emsp;&emsp;# Парсинг зарплаты\
-    ├── age_handler.py&emsp;&emsp;&emsp;&emsp;# Извлечение возраста\
-    ├── experience_handler.py&emsp;# Парсинг опыта работы\
-    ├── city_handler.py&emsp;&emsp;&emsp;&emsp;# Обработка города (one-hot кодирование)\
-    └── final_handler.py&emsp;&emsp;&emsp;&ensp;# Формирование финальных массивов
+&emsp;&emsp;├── __init__.py\
+&emsp;&emsp;├── base_handler.py&emsp;&emsp;&emsp;&ensp;# Абстрактный базовый класс\
+&emsp;&emsp;├── salary_handler.py&emsp;&emsp;&emsp;# Парсинг зарплаты\
+&emsp;&emsp;├── age_handler.py&emsp;&emsp;&emsp;&emsp;# Извлечение возраста\
+&emsp;&emsp;├── experience_handler.py&emsp;# Парсинг опыта работы\
+&emsp;&emsp;├── city_handler.py&emsp;&emsp;&emsp;&emsp;# Обработка города (one-hot кодирование)\
+&emsp;&emsp;└── final_handler.py&emsp;&emsp;&emsp;&ensp;# Формирование финальных массивов
 
 ## Установка
 ```bash
