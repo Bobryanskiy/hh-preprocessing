@@ -3,17 +3,40 @@
 Модель линейной регрессии для предсказания зарплат на основе обработанных данных резюме с hh.ru.
 
 ## Структура проекта
-assignment2_regression/
-├── app.py          # Предсказание: python app.py x_data.npy
-├── train.py        # Обучение модели (выполняется 1 раз)
-├── model.py        # Реализация линейной регрессии
-├── requirements.txt
-├── README.md
-├── .gitignore
-└── resources/      # Сохранённые веса модели
-    ├── weights.npy
+assignment2_regression/\
+├── app.py&emsp;&emsp;&emsp;&emsp;# Предсказание: python app.py x_data.npy\
+├── train.py&emsp;&emsp;&emsp;&ensp;# Обучение модели (выполняется 1 раз)\
+├── model.py&emsp;&emsp;&emsp;# Реализация линейной регрессии\
+├── requirements.txt\
+├── README.md\
+├── .gitignore\
+└── resources/&emsp;&emsp;&emsp;# Сохранённые веса модели\
+    ├── weights.npy\
     └── bias.npy
 
 ## Установка
 ```bash
 pip install -r requirements.txt
+```
+## Обучение модели (выполнить 1 раз)
+python train.py
+
+Скрипт автоматически:
+1. Загрузит x_data.npy и y_data.npy из папки ./assignment1_preprocessing/
+2. Обучит модель линейной регрессии
+3. Сохранит веса в папку resources/
+
+## Использование
+python app.py путь/к/x_data.npy
+
+Вывод: список зарплат в рублях, по одной на строку:
+65432.10
+78901.23
+45678.90
+...
+
+## Реализация
+- Чистая линейная регрессия без сторонних ML-библиотек (только numpy)
+- Обучение через нормальное уравнение: θ = (X^T X)^(-1) X^T y
+- Веса сохраняются вручную для прозрачности и соответствия требованиям задания
+- Соответствует интерфейсу: python app path/to/x_data.npy
