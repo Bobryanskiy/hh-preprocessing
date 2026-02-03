@@ -11,8 +11,8 @@ assignment2_regression/\
 ├── README.md\
 ├── .gitignore\
 └── resources/&emsp;&emsp;&emsp;# Сохранённые веса модели\
-    ├── weights.npy\
-    └── bias.npy
+&emsp;&emsp;├── weights.npy\
+&emsp;&emsp;└── bias.npy
 
 ## Установка
 ```bash
