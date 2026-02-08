@@ -17,7 +17,7 @@ assignment3_classification/\
 ├── README.md\
 ├── .gitignore\
 ├── resources/&emsp;&emsp;&ensp;# сохранённая модель\
-│&emsp;&emsp;└── model.pkl\
+│&emsp;&ensp;└── model.pkl\
 └── reports/&emsp;&emsp;&emsp;# графики результатов\
 &emsp;&emsp;├── class_balance.png\
 &emsp;&emsp;└── confusion_matrix.png\
