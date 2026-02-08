@@ -7,20 +7,15 @@
 
 import numpy as np
 from pathlib import Path
-from typing import Tuple
 
 
 class LinearRegressionModel:
-    """
-    Класс линейной регрессии с ручным управлением весами.
-    
-    Обучается через нормальное уравнение, сохраняет веса в файлы.
-    """
+    """Класс линейной регрессии с ручным управлением весами."""
     
     def __init__(self) -> None:
         """Инициализация модели с пустыми весами."""
-        self.weights: np.ndarray | None = None
-        self.bias: float = 0.0
+        self.weights = None
+        self.bias = 0.0
     
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         """
@@ -32,9 +27,7 @@ class LinearRegressionModel:
             X: Матрица признаков (n_samples, n_features)
             y: Вектор целевой переменной (n_samples,)
         """
-        # Добавляем столбец единиц для смещения (bias)
         X_b = np.c_[np.ones((X.shape[0], 1)), X]
-        # Нормальное уравнение
         theta = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)
         self.bias = theta[0]
         self.weights = theta[1:]
