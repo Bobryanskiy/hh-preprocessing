@@ -17,10 +17,10 @@ assignment3_classification/\
 ├── README.md\
 ├── .gitignore\
 ├── resources/&emsp;&emsp;&ensp;# сохранённая модель\
-│&emsp;&ensp;└── model.pkl\
+│&emsp;└── model.pkl\
 └── reports/&emsp;&emsp;&emsp;# графики результатов\
-&emsp;&emsp;├── class_balance.png\
-&emsp;&emsp;└── confusion_matrix.png\
+&emsp;├── class_balance.png\
+&emsp;└── confusion_matrix.png\
 
 ## Установка
 ```bash
