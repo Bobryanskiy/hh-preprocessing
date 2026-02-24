@@ -52,21 +52,21 @@ def main() -> None:
     # Фильтрация выбросов (легальное улучшение без нарушения ТЗ!)
     # Убираем зарплаты < 15к (заглушки hh.ru) и > 1 млн (аномалии)
     mask = (y >= 15_000) & (y <= 1_000_000)
-    X_filtered = X[mask]
+    x_filtered = X[mask]
     y_filtered = y[mask]
     
     logger.info(f"Исходные данные: {len(y)} образцов")
     logger.info(f"После фильтрации выбросов: {len(y_filtered)} образцов ({len(y_filtered)/len(y)*100:.1f}%)")
     
-    logger.info(f"Обучение модели на {len(X_filtered)} образцах...")
+    logger.info(f"Обучение модели на {len(x_filtered)} образцах...")
     model = LinearRegressionModel()
-    model.fit(X_filtered, y_filtered)
+    model.fit(x_filtered, y_filtered)
     
     logger.info("Сохранение весов в resources/...")
-    model.save("resources")
+    model.save("assignment2_regression/resources")
     
     # Расчёт метрик НА ОТФИЛЬТРОВАННЫХ ДАННЫХ
-    y_pred = model.predict(X_filtered)
+    y_pred = model.predict(x_filtered)
     mse = np.mean((y_filtered - y_pred) ** 2)
     rmse = np.sqrt(mse)
     r2 = 1 - np.sum((y_filtered - y_pred) ** 2) / np.sum((y_filtered - np.mean(y_filtered)) ** 2)

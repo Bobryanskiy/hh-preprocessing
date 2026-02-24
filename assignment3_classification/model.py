@@ -197,6 +197,8 @@ class DeveloperLevelClassifier:
         self.model = RandomForestClassifier(
             n_estimators=150,
             max_depth=15,
+            min_samples_leaf=2,
+            max_features="sqrt",
             class_weight=weights_dict,
             random_state=42
         )

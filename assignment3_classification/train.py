@@ -116,12 +116,12 @@ def main() -> None:
     logger.info("\n" + report)
     
     # Сохранение
-    model_path = Path("resources/model.pkl")
+    model_path = Path("assignment3_classification/resources/model.pkl")
     classifier.save(model_path)
     logger.info(f"Модель сохранена: {model_path}")
     
     # Графики
-    reports_dir = Path("reports")
+    reports_dir = Path("assignment3_classification/reports")
     reports_dir.mkdir(exist_ok=True)
     plot_class_balance(y, reports_dir / "class_balance.png")
     plot_confusion_matrix(y_test, y_pred, reports_dir / "confusion_matrix.png")

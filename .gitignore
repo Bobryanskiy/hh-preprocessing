@@ -10,7 +10,6 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
-resources/
 
 ev.py
 t.py
