@@ -1,261 +1,58 @@
-# HH.ru Machine Learning Homework
+# Классификация уровней разработчиков (junior/middle/senior)
 
-Домашние задания по машинному обучению на данных с сайта hh.ru.
+PoC-проект для автоматического определения уровня разработчика по данным резюме с hh.ru.
 
-## 📋 Описание проекта
+## Задача
+На основе датасета hh.ru:
+1. Выделить резюме IT-разработчиков
+2. Сформировать целевую переменную: junior / middle / senior
+3. Обучить классификатор
+4. Оценить качество и сделать выводы
 
-Проект включает три связанных задания по обработке и анализу данных резюме с портала hh.ru:
+## Структура проекта
+assignment3_classification/\
+├── train.py&emsp;&emsp;&emsp;# обучение + графики + отчёт (запускать 1 раз)\
+├── model.py&emsp;&emsp;&emsp;# логика классификации и разметки\
+├── requirements.txt\
+├── README.md\
+├── .gitignore\
+├── resources/&emsp;&emsp;&ensp;# сохранённая модель\
+│&emsp;&ensp;└── model.pkl\
+└── reports/&emsp;&emsp;&emsp;# графики результатов\
+&emsp;&emsp;├── class_balance.png\
+&emsp;&emsp;└── confusion_matrix.png\
 
-1. **Парсинг и анализ данных** — преобразование сырых CSV-данных в числовые массивы с использованием паттерна проектирования «Цепочка ответственности»
-2. **Линейная регрессия** — предсказание зарплат на основе обработанных данных
-3. **Классификация уровней разработчиков** — автоматическое определение уровня (junior/middle/senior) с построением графиков и отчётов
-
-## 📁 Структура проекта
-
-hh-preprocessing/\
-&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Этот файл\
-&emsp;├── .gitignore&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Исключения для Git\
-&emsp;├── hh.csv&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Исходный датасет (должен быть здесь)\
-&emsp;│\
-&emsp;├── assignment1_preprocessing/&emsp;&emsp;&emsp;# Задание №1\
-&emsp;│&emsp;&emsp;├── app.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Точка входа\
-&emsp;│&emsp;&emsp;├── pipeline.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Сборка цепочки обработчиков\
-&emsp;│&emsp;&emsp;├── requirements.txt&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Зависимости\
-&emsp;│&emsp;&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Документация задания\
-&emsp;│&emsp;&emsp;└── handlers/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Обработчики данных\
-&emsp;│&emsp;&emsp;&emsp;&emsp;├── __init__.py\
-&emsp;│&emsp;&emsp;&emsp;&emsp;├── base_handler.py\
-&emsp;│&emsp;&emsp;&emsp;&emsp;├── salary_handler.py\
-&emsp;│&emsp;&emsp;&emsp;&emsp;├── age_handler.py\
-&emsp;│&emsp;&emsp;&emsp;&emsp;├── experience_handler.py\
-&emsp;│&emsp;&emsp;&emsp;&emsp;├── city_handler.py\
-&emsp;│&emsp;&emsp;&emsp;&emsp;└── final_handler.py\
-&emsp;│\
-&emsp;├── assignment2_regression/&emsp;&emsp;&emsp;&emsp;&emsp;# Задание №2\
-&emsp;│&emsp;&emsp;├── app.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Точка входа (предсказание)\
-&emsp;│&emsp;&emsp;├── train.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Обучение модели\
-&emsp;│&emsp;&emsp;├── model.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Реализация регрессии\
-&emsp;│&emsp;&emsp;├── evaluate.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Оценка качества\
-&emsp;│&emsp;&emsp;├── requirements.txt&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Зависимости\
-&emsp;│&emsp;&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Документация задания\
-&emsp;│&emsp;&emsp;└── resources/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Сохранённые веса модели\
-&emsp;│&emsp;&emsp;&emsp;&emsp;├── weights.npy\
-&emsp;│&emsp;&emsp;&emsp;&emsp;└── bias.npy\
-&emsp;│\
-&emsp;└── assignment3_classification/&emsp;&emsp;&emsp;&emsp;# Задание №3\
-&emsp;&emsp;&emsp;&emsp;├── train.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Обучение + отчёты\
-&emsp;&emsp;&emsp;&emsp;├── model.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Классификатор\
-&emsp;&emsp;&emsp;&emsp;├── requirements.txt&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Зависимости\
-&emsp;&emsp;&emsp;&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Документация задания\
-&emsp;&emsp;&emsp;&emsp;├── resources/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Сохранённая модель\
-&emsp;&emsp;&emsp;&emsp;│&emsp;&emsp;└── model.pkl\
-&emsp;&emsp;&emsp;&emsp;└── reports/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Графики результатов\
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;├── class_balance.png\
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;└── confusion_matrix.png
-
-## 🖥️ Системные требования
-
-- **Python**: 3.8 или выше
-- **Оперативная память**: 4 ГБ (рекомендуется 8 ГБ)
-- **Дисковое пространство**: 500 МБ
-- **ОС**: Windows 10/11, macOS, Linux
-
-## 📦 Установка зависимостей
-
-### Общие зависимости для всех заданий:
-pip install pandas numpy scikit-learn matplotlib seaborn joblib
-
-### Или по отдельности для каждого задания:
-
-**Задание №1:**
-cd assignment1_preprocessing
+## Установка
+```bash
 pip install -r requirements.txt
+```
 
-**Задание №2:**
-cd assignment2_regression
-pip install -r requirements.txt
+## Выводы о качестве модели и причинах ошибок:
 
-**Задание №3:**
-cd assignment3_classification
-pip install -r requirements.txt
+1. Жизнеспособность подхода:
+   • Модель достигла weighted F1-score = 0.944 при базовом уровне случайного
+     угадывания 0.33
+   • Это доказывает, что автоматическое различение уровней разработчиков
+     по данным hh.ru принципиально возможно с высокой точностью
 
-## 🚀 Запуск проекта
+2. Анализ распределения классов:
+   • Выявлено 1 817 резюме настоящих разработчиков (после строгой фильтрации)
+   • Распределение: 56.0% junior, 41.1% senior, 2.9% middle
+   • Низкая доля middle объясняется особенностями оформления резюме на hh.ru:
+     кандидаты редко указывают уровень "middle" явно в названии должности
 
-### Подготовка данных
+3. Качество классификации:
+   • Точность (accuracy): 94.5%
+   • F1-score для junior: 0.964, для senior: 0.941
+   • Основные ошибки: путаница между middle/senior из-за малого количества
+     примеров middle в обучающей выборке
 
-Поместите файл hh.csv в корневую папку проекта:
+4. Рекомендации:
+   • Для улучшения распознавания middle необходимо расширить признаковое
+     пространство за счёт парсинга ключевых навыков и стека технологий
+   • Применить методы синтетической генерации данных (SMOTE) для балансировки
+     класса middle
 
-hh-preprocessing/\
-&emsp;├── hh.csv&emsp;&emsp;&emsp;&emsp;← сюда\
-&emsp;├── assignment1_preprocessing/\
-&emsp;├── assignment2_regression/\
-&emsp;└── assignment3_classification/
-
----
-
-### Задание №1: Парсинг и анализ данных
-
-**Цель:** Преобразование сырых CSV-данных в числовые массивы .npy с использованием паттерна «Цепочка ответственности».
-
-**Запуск:**
-cd assignment1_preprocessing
-python app.py
-
-**Результат:**
-- x_data.npy — матрица признаков (возраст, опыт, города)
-- y_data.npy — вектор целевой переменной (зарплаты в рублях)
-
-**Точка входа:** assignment1_preprocessing/app.py
-
----
-
-### Задание №2: Линейная регрессия
-
-**Цель:** Предсказание зарплат на основе обработанных данных из задания №1.
-
-**Обучение модели:**
-cd assignment2_regression
-python train.py
-
-**Предсказание зарплат:**
-python app.py
-
-**Результат:**
-- Веса модели сохранены в resources/weights.npy и resources/bias.npy
-- Вывод: список зарплат в рублях, по одной на строку
-
-**Точка входа:** assignment2_regression/app.py
-
----
-
-### Задание №3: Классификация уровней разработчиков
-
-**Цель:** Автоматическое определение уровня разработчика (junior/middle/senior) с построением графиков и отчётов.
-
-**Запуск:**
-cd assignment3_classification
-python train.py
-
-**Результат:**
-- Модель сохранена в resources/model.pkl
-- График баланса классов: reports/class_balance.png
-- Матрица ошибок: reports/confusion_matrix.png
-- Отчёт о классификации выведен в консоль (precision, recall, F1-score)
-
-**Точка входа:** assignment3_classification/train.py
-
----
-
-## 🧪 Тестирование
-
-Для проверки корректности работы всех заданий выполните:
-
-# Проверка задания №1
-cd assignment1_preprocessing
-python app.py
-
-# Проверка задания №2
-cd ../assignment2_regression
-python train.py
-python app.py
-
-# Проверка задания №3
-cd ../assignment3_classification
-python train.py
-
----
-
-## 📊 Ожидаемые результаты
-
-### Задание №1
-- Успешная обработка ~67 000 резюме
-- Создание файлов x_data.npy (66 945 × 12) и y_data.npy (66 945,)
-
-### Задание №2
-- Метрики качества после фильтрации выбросов:
-  - R²: ~0.208 (20.8% объяснённой дисперсии)
-  - RMSE: ~62 451 руб. (средняя ошибка предсказания)
-
-### Задание №3
-- Количество отфильтрованных IT-разработчиков: ~1 800
-- Метрики качества классификации:
-  - Accuracy: ~94.5%
-  - Weighted F1-score: ~0.944
-
----
-
-## 📚 Зависимости проекта
-
-### Общие зависимости:
-- pandas >= 1.5.0 — работа с табличными данными
-- numpy >= 1.21.0 — числовые вычисления
-- scikit-learn >= 1.0.0 — машинное обучение
-- matplotlib >= 3.5.0 — построение графиков
-- seaborn >= 0.11.0 — визуализация данных
-- joblib >= 1.0.0 — сохранение моделей
-
-### Специфичные зависимости:
-- **Задание №1**: только pandas, numpy
-- **Задание №2**: только numpy
-- **Задание №3**: все перечисленные выше
-
----
-
-## 📝 Документация по заданиям
-
-### Задание №1: Парсинг и анализ данных
-- **Паттерн проектирования**: Цепочка ответственности (Chain of Responsibility)
-- **Обработчики**:
-  - SalaryHandler — парсинг зарплаты
-  - AgeHandler — извлечение возраста
-  - ExperienceHandler — парсинг опыта работы
-  - CityHandler — обработка города (one-hot encoding)
-  - FinalHandler — формирование финальных массивов
-- **Выходные данные**: x_data.npy, y_data.npy
-
-### Задание №2: Линейная регрессия
-- **Алгоритм**: Нормальное уравнение (без итераций)
-- **Признаки**: возраст, опыт, города (one-hot)
-- **Целевая переменная**: зарплата в рублях
-- **Фильтрация**: удаление выбросов (< 15 000 руб., > 1 000 000 руб.)
-- **Выходные данные**: веса в resources/, предсказания в консоли
-
-### Задание №3: Классификация уровней
-- **Алгоритм**: Random Forest с балансировкой классов
-- **Фильтрация**: только настоящие разработчики (строгая фильтрация)
-- **Разметка**: по ключевым словам в должности (без опыта)
-- **Метрики**: precision, recall, F1-score по классам
-- **Выходные данные**: модель в resources/, графики в reports/
-
----
-
-## 🔧 Настройка окружения (опционально)
-
-### Создание виртуального окружения:
-
-**Windows:**
-python -m venv venv
-venv\Scripts\activate
-
-**Linux/macOS:**
-python3 -m venv venv
-source venv/bin/activate
-
-### Установка всех зависимостей сразу:
-pip install pandas numpy scikit-learn matplotlib seaborn joblib
-
----
-
-## 📞 Информация
-
-- **Автор**: Сухов Олег
-- **Дисциплина**: Машинное обучение
-- **Год**: 2026
-
-## 📄 Лицензия
-
-Проект создан в учебных целях.
-
----
-
-Удачи с изучением машинного обучения!
+Заключение: PoC полностью успешен — модель демонстрирует высокое качество
+классификации (F1 = 0.944) на реальных данных hh.ru, что подтверждает
+жизнеспособность подхода автоматического определения уровня разработчика.

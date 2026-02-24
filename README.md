@@ -12,33 +12,33 @@
 
 ## 📁 Структура проекта
 
-hh-preprocessing/\
-├── README.md                              # Этот файл\
-├── .gitignore                             # Исключения для Git\
-├── hh.csv                                 # Исходный датасет (должен быть здесь)\
+hh-preprocessing/
+├── README.md                              # Этот файл
+├── .gitignore                             # Исключения для Git
+├── hh.csv                                 # Исходный датасет (должен быть здесь)
 │
-├── assignment1_preprocessing/             # Задание №1\
-│   ├── app.py                             # Точка входа\
-│   ├── pipeline.py                        # Сборка цепочки обработчиков\
-│   ├── requirements.txt                   # Зависимости\
-│   ├── README.md                          # Документация задания\
-│   └── handlers/                          # Обработчики данных\
-│       ├── __init__.py\
-│       ├── base_handler.py\
-│       ├── salary_handler.py\
-│       ├── age_handler.py\
-│       ├── experience_handler.py\
-│       ├── city_handler.py\
-│       └── final_handler.py\
+├── assignment1_preprocessing/             # Задание №1
+│   ├── app.py                             # Точка входа
+│   ├── pipeline.py                        # Сборка цепочки обработчиков
+│   ├── requirements.txt                   # Зависимости
+│   ├── README.md                          # Документация задания
+│   └── handlers/                          # Обработчики данных
+│       ├── __init__.py
+│       ├── base_handler.py
+│       ├── salary_handler.py
+│       ├── age_handler.py
+│       ├── experience_handler.py
+│       ├── city_handler.py
+│       └── final_handler.py
 │
-├── assignment2_regression/                # Задание №2\
-│   ├── app.py                             # Точка входа (предсказание)\
-│   ├── train.py                           # Обучение модели\
-│   ├── model.py                           # Реализация регрессии\
-│   ├── evaluate.py                        # Оценка качества\
-│   ├── requirements.txt                   # Зависимости\
-│   ├── README.md                          # Документация задания\
-│   └── resources/                         # Сохранённые веса модели\
+├── assignment2_regression/                # Задание №2
+│   ├── app.py                             # Точка входа (предсказание)
+│   ├── train.py                           # Обучение модели
+│   ├── model.py                           # Реализация регрессии
+│   ├── evaluate.py                        # Оценка качества
+│   ├── requirements.txt                   # Зависимости
+│   ├── README.md                          # Документация задания
+│   └── resources/                         # Сохранённые веса модели
 │       ├── weights.npy
 │       └── bias.npy
 │
@@ -83,12 +83,12 @@ pip install -r requirements.txt
 
 ### Подготовка данных
 
-Поместите файл hh.csv в корневую папку проекта:\
-hh-preprocessing/\
-├── hh.csv          ← сюда\
-├── assignment1_preprocessing/\
-├── assignment2_regression/\
-└── assignment3_classification/\
+Поместите файл hh.csv в корневую папку проекта:
+hh-preprocessing/
+├── hh.csv          ← сюда
+├── assignment1_preprocessing/
+├── assignment2_regression/
+└── assignment3_classification/
 
 ---
 
