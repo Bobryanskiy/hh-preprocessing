@@ -12,46 +12,46 @@
 
 ## 📁 Структура проекта
 
-hh-preprocessing/
-├── README.md                              # Этот файл
-├── .gitignore                             # Исключения для Git
-├── hh.csv                                 # Исходный датасет (должен быть здесь)
-│
-├── assignment1_preprocessing/             # Задание №1
-│   ├── app.py                             # Точка входа
-│   ├── pipeline.py                        # Сборка цепочки обработчиков
-│   ├── requirements.txt                   # Зависимости
-│   ├── README.md                          # Документация задания
-│   └── handlers/                          # Обработчики данных
-│       ├── __init__.py
-│       ├── base_handler.py
-│       ├── salary_handler.py
-│       ├── age_handler.py
-│       ├── experience_handler.py
-│       ├── city_handler.py
-│       └── final_handler.py
-│
-├── assignment2_regression/                # Задание №2
-│   ├── app.py                             # Точка входа (предсказание)
-│   ├── train.py                           # Обучение модели
-│   ├── model.py                           # Реализация регрессии
-│   ├── evaluate.py                        # Оценка качества
-│   ├── requirements.txt                   # Зависимости
-│   ├── README.md                          # Документация задания
-│   └── resources/                         # Сохранённые веса модели
-│       ├── weights.npy
-│       └── bias.npy
-│
-└── assignment3_classification/            # Задание №3
-    ├── train.py                           # Обучение + отчёты
-    ├── model.py                           # Классификатор
-    ├── requirements.txt                   # Зависимости
-    ├── README.md                          # Документация задания
-    ├── resources/                         # Сохранённая модель
-    │   └── model.pkl
-    └── reports/                           # Графики результатов
-        ├── class_balance.png
-        └── confusion_matrix.png
+hh-preprocessing/\
+&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Этот файл\
+&emsp;├── .gitignore&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Исключения для Git\
+&emsp;├── hh.csv&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Исходный датасет (должен быть здесь)\
+&emsp;│\
+&emsp;├── assignment1_preprocessing/&emsp;&emsp;&emsp;# Задание №1\
+&emsp;│&emsp;&emsp;├── app.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Точка входа\
+&emsp;│&emsp;&emsp;├── pipeline.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Сборка цепочки обработчиков\
+&emsp;│&emsp;&emsp;├── requirements.txt&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Зависимости\
+&emsp;│&emsp;&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Документация задания\
+&emsp;│&emsp;&emsp;└── handlers/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Обработчики данных\
+&emsp;│&emsp;&emsp;&emsp;&emsp;├── __init__.py\
+&emsp;│&emsp;&emsp;&emsp;&emsp;├── base_handler.py\
+&emsp;│&emsp;&emsp;&emsp;&emsp;├── salary_handler.py\
+&emsp;│&emsp;&emsp;&emsp;&emsp;├── age_handler.py\
+&emsp;│&emsp;&emsp;&emsp;&emsp;├── experience_handler.py\
+&emsp;│&emsp;&emsp;&emsp;&emsp;├── city_handler.py\
+&emsp;│&emsp;&emsp;&emsp;&emsp;└── final_handler.py\
+&emsp;│\
+&emsp;├── assignment2_regression/&emsp;&emsp;&emsp;&emsp;&emsp;# Задание №2\
+&emsp;│&emsp;&emsp;├── app.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Точка входа (предсказание)\
+&emsp;│&emsp;&emsp;├── train.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Обучение модели\
+&emsp;│&emsp;&emsp;├── model.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Реализация регрессии\
+&emsp;│&emsp;&emsp;├── evaluate.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Оценка качества\
+&emsp;│&emsp;&emsp;├── requirements.txt&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Зависимости\
+&emsp;│&emsp;&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Документация задания\
+&emsp;│&emsp;&emsp;└── resources/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Сохранённые веса модели\
+&emsp;│&emsp;&emsp;&emsp;&emsp;├── weights.npy\
+&emsp;│&emsp;&emsp;&emsp;&emsp;└── bias.npy\
+&emsp;│\
+&emsp;└── assignment3_classification/&emsp;&emsp;&emsp;&emsp;# Задание №3\
+&emsp;&emsp;&emsp;&emsp;├── train.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Обучение + отчёты\
+&emsp;&emsp;&emsp;&emsp;├── model.py&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Классификатор\
+&emsp;&emsp;&emsp;&emsp;├── requirements.txt&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Зависимости\
+&emsp;&emsp;&emsp;&emsp;├── README.md&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Документация задания\
+&emsp;&emsp;&emsp;&emsp;├── resources/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Сохранённая модель\
+&emsp;&emsp;&emsp;&emsp;│&emsp;&emsp;└── model.pkl\
+&emsp;&emsp;&emsp;&emsp;└── reports/&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# Графики результатов\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;├── class_balance.png\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;└── confusion_matrix.png\
 
 ## 🖥️ Системные требования
 
@@ -84,11 +84,12 @@ pip install -r requirements.txt
 ### Подготовка данных
 
 Поместите файл hh.csv в корневую папку проекта:
-hh-preprocessing/
-├── hh.csv          ← сюда
-├── assignment1_preprocessing/
-├── assignment2_regression/
-└── assignment3_classification/
+
+hh-preprocessing/\
+&emsp;├── hh.csv&emsp;&emsp;&emsp;&emsp;← сюда\
+&emsp;├── assignment1_preprocessing/\
+&emsp;├── assignment2_regression/\
+&emsp;└── assignment3_classification/\
 
 ---
 
@@ -242,19 +243,3 @@ source venv/bin/activate
 
 ### Установка всех зависимостей сразу:
 pip install pandas numpy scikit-learn matplotlib seaborn joblib
-
----
-
-## 📞 Информация
-
-- **Автор**: Студент НИУ ВШЭ
-- **Дисциплина**: Машинное обучение
-- **Год**: 2026
-
-## 📄 Лицензия
-
-Проект создан в учебных целях.
-
----
-
-Удачи с изучением машинного обучения!
